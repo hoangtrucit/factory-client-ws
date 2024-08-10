@@ -1,6 +1,8 @@
-import "@/styles/globals.css";
+import { WebsocketProvider } from "@/ws/useWebsocket";
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (<WebsocketProvider>
+    <Component {...pageProps} />;
+  </WebsocketProvider>);
 }
